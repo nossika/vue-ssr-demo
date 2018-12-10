@@ -7,6 +7,18 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(baseConfig, {
   entry: path.resolve(__dirname, '../src/entry-client.js'),
+  module: {
+    rules: [
+      {
+        test: /\.(css|scss|sass)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+    ],
+  },
   optimization: {
     runtimeChunk: {
       name: 'manifest',
@@ -25,7 +37,7 @@ module.exports = merge(baseConfig, {
           name: 'styles',
           test: /\.css$/,
           chunks: 'all',
-          enforce: true
+          enforce: true,
         },
         vendor: {
           test: /node_modules/,
@@ -33,8 +45,8 @@ module.exports = merge(baseConfig, {
           name: "vendor",
           priority: 10,
           enforce: true,
-        }
-      }
+        },
+      },
     },
   },
   plugins: [
@@ -55,5 +67,5 @@ module.exports = merge(baseConfig, {
     //   template: path.resolve(__dirname, '../src/index.html'),
     //   inject: 'body',
     // }),
-  ]
-})
+  ],
+});

@@ -19,7 +19,7 @@ app.use(async ctx => {
   // 传递参数context给entry-server导出的app
   const htmlStr = await renderer.renderToString({
     state: {
-      user: 'dude',
+      user: 'my friend',
     },
     path: ctx.req.url,
   });

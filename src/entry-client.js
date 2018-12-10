@@ -9,6 +9,7 @@ if (window.__INITIAL_STATE__) {
 const router = app.$router;
 const store = app.$store;
 
+// 等路由异步组件加载完再执行app.$mount操作，以保持和服务端渲染结果一致
 router.onReady(() => {
   // 路由跳转前先执行完asyncData(如果有)再渲染，以保持和服务端渲染的行为一致（也是执行完asyncData再返回）
   router.beforeResolve((to, from, next) => {

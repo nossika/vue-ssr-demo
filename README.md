@@ -9,4 +9,4 @@
 
 
 
-todo: compile fail when using style in .vue
+todo: hot reload & cache

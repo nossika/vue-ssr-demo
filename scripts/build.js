@@ -33,5 +33,5 @@ const serverCompiler = webpack(serverConfig);
     console.log('serverCompiler ok');
   });
 
-})()
+})();
 

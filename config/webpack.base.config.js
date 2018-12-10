@@ -27,24 +27,9 @@ module.exports = {
 
       },
       {
-        test: /\.(css|scss|sass)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.(less)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'less-loader',
-        ],
-      },
-      {
         test: /\.vue$/,
         use: ['vue-loader'],
+
       },
       {
         test: /\.(png|jpe?g|gif|svg|ttf|woff|woff2|eot)(\?\S*)?$/,
@@ -56,7 +41,7 @@ module.exports = {
             },
           }
         ]
-      }
+      },
     ]
   },
   plugins: [

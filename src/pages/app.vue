@@ -19,4 +19,11 @@
     },
   }
 </script>
+<style lang="sass" scoped>
+#app {
+  > h1 {
+    color: #666;
+  }
+}
+</style>
 
