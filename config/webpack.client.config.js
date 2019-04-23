@@ -4,6 +4,7 @@ const VueSSRClientPlugin = require('vue-server-renderer/client-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(baseConfig, {
   entry: path.resolve(__dirname, '../src/entry-client.js'),
@@ -62,10 +63,10 @@ module.exports = merge(baseConfig, {
       filename: "[name].[hash].css",
       chunkFilename: "[chunkhash].css",
     }),
-    // new HtmlWebpackPlugin({
-    //   filename: 'index.html',
-    //   template: path.resolve(__dirname, '../src/index.html'),
-    //   inject: 'body',
-    // }),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: path.resolve(__dirname, '../src/client.html'),
+      inject: 'body',
+    }),
   ],
 });
