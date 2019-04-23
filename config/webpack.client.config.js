@@ -64,8 +64,8 @@ module.exports = merge(baseConfig, {
       chunkFilename: "[chunkhash].css",
     }),
     new HtmlWebpackPlugin({
-      filename: 'client.html',
-      template: path.resolve(__dirname, '../src/client.html'),
+      filename: 'index.html',
+      template: path.resolve(__dirname, '../src/index.html'),
       inject: 'body',
     }),
   ],
